@@ -1,10 +1,27 @@
 <script setup>
+import { useRegistrarStore } from '@/modules/registro/stores/registrarStore';
+import { ref, watch } from 'vue';
+
+const registrarStore = useRegistrarStore();
+
+const nombre = ref(registrarStore.nombre);
+const email = ref(registrarStore.email); 
+
+watch(() => registrarStore.nombre, (newValue) => {
+    nombre.value = newValue;
+});
+
+watch(() => registrarStore.email, (newValue) => {
+    email.value = newValue;
+});
 
 </script>
 
 <template>
     <div class="sidebar">
-        <h2>Barra lateral</h2>
+        <h2>Bienvenido</h2>
+        <h3>Nombre: {{nombre}}</h3>
+        <h3>Email: {{email}} </h3>
         <ul>
             <!-- Enlaces para los componentes -->
             <li><router-link to="/contador">Contador</router-link></li>

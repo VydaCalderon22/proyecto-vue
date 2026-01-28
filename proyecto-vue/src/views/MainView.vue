@@ -1,13 +1,20 @@
 <script setup>
-import router from '@/router';
 import SideBar from '../components/SideBar.vue';
+import Header from '../components/Header.vue';
+import { ref } from 'vue';
+
+const texto = ref('');
 </script>
 
 
 <template>
+    <Header></Header>
+
     <div class="container">
         <SideBar></SideBar> 
         <div class="content">
+            <input v-model="texto" placeholder="Escribe algo..." />
+            {{ texto }}
             <router-view></router-view>
         </div>
 
