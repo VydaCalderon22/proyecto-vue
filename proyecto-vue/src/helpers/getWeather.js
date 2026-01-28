@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://api.open-meteo.com/v1/forecast?latitude=18.9261&longitude=-99.2308&current=temperature_2m&timezone=auto';
+const API_URL = 'https://api.open-meteo.com/v1/forecast?latitude=18.9261&longitude=-99.2308&current=temperature_2m&timezone=auto&forecast_days=1';
 
 export const getTemperatura = async () => {
     const respuesta = await axios.get(API_URL);

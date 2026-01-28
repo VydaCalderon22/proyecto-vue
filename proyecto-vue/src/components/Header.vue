@@ -1,11 +1,23 @@
 <script setup>
 import Weather from './Weather.vue';
+// Permite definir las props que el componente puede recibir de un componente padre
+import { defineProps, ref, watch} from 'vue';
+
+const props = defineProps(['mensaje'])
+const mensajeRecibido = ref(props.mensaje);
+
+watch(() => props.mensaje, (newVal) => {
+    mensajeRecibido.value = newVal;
+}); 
+
+
 </script>
 
 
 <template>
     <div class="header">
-        <Weather></Weather>
+        <!-- Componente hijo y el padre es Header -->
+        {{ mensajeRecibido }} <Weather></Weather>
     </div>
 </template>
 

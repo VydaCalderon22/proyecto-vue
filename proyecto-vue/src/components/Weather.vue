@@ -1,7 +1,7 @@
 <script setup>
-import { useWeather } from "../composables/useWeather";
 import { onMounted } from "vue";
 import { useWeatherStore } from "../stores/weatherStore";
+import { useWeather } from "../composables/useWeather"; 
 
 const weatherStore = useWeatherStore();
 

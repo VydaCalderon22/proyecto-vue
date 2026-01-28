@@ -5,10 +5,10 @@ import { ref } from 'vue';
 
 const texto = ref('');
 </script>
-
-
+ 
 <template>
-    <Header></Header>
+    <!-- Componentes hijos -->
+    <Header :mensaje="texto"></Header>
 
     <div class="container">
         <SideBar></SideBar> 
